@@ -3,6 +3,10 @@ package com.decylus.study.t000.k091;
 /**
  * Created on 2019-10-30.
  *
+ * recursion
+ * 11ms  34.2mb
+ * the solution2 is faster than this
+ *
  * @author jiawei
  */
 public class Solution {
