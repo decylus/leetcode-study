@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created on 2019-11-03.
  *
- * 4ms, 36.8mb
+ * 3ms, 36.6mb
  *
  * @author jiawei
  */
@@ -19,10 +19,6 @@ public class Solution {
     }
 
     private void backTrack(int[] candidates, int target, int start, Deque<Integer> solution, List<List<Integer>> result){
-        //wrong way, discard
-        if (target < 0){
-            return;
-        }
         //find the solution
         if (target == 0){
             List<Integer> list = new ArrayList<>(solution);
@@ -31,6 +27,9 @@ public class Solution {
 
         }
         for (int i = start; i < candidates.length; i++){
+            if (target - candidates[i] < 0){
+                continue;
+            }
             solution.add(candidates[i]);
             backTrack(candidates, target - candidates[i], i, solution, result);
             solution.removeLast();
